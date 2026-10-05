@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Login - GameDev Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+
+    <div class="logo">🎮 GameDev Hub</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="signup.html">Sign Up</a>
+    </nav>
+
+</header>
+
+
+<main class="auth-container">
+
+    <div class="auth-box">
+
+        <div class="auth-icon">🎮</div>
+
+        <h1>Welcome Back</h1>
+
+        <p>Login to your GameDev Hub account</p>
+
+
+        <form onsubmit="login(event)">
+
+            <label>Username</label>
+
+            <input
+                type="text"
+                id="username"
+                placeholder="Enter username"
+                required
+            >
+
+
+            <label>Password</label>
+
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter password"
+                required
+            >
+
+
+            <label>Login As</label>
+
+            <select id="role">
+
+                <option value="user">
+                    User / Player
+                </option>
+
+                <option value="admin">
+                    Admin / Organizer
+                </option>
+
+            </select>
+
+
+            <button type="submit">
+                Login
+            </button>
+
+        </form>
+
+
+        <p id="message"></p>
+
+
+        <p>
+            Don't have an account?
+            <a href="signup.html">Create Account</a>
+        </p>
+
+    </div>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

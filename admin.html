@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Admin Dashboard - GameDev Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🎮 GameDev Hub
+    </div>
+
+    <nav>
+
+        <a href="admin.html">
+            Admin Dashboard
+        </a>
+
+        <a href="#" onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="admin-container">
+
+
+    <div class="admin-heading">
+
+        <p class="small-title">
+            ADMIN / ORGANIZER
+        </p>
+
+        <h1>Tournament Management</h1>
+
+        <p>
+            Manage tournaments, registrations, results,
+            updates and prizes.
+        </p>
+
+    </div>
+
+
+    <!-- CREATE TOURNAMENT -->
+
+    <section class="admin-panel">
+
+        <h2>🏆 Create Tournament</h2>
+
+        <form
+            class="admin-form"
+            onsubmit="createTournament(event)"
+        >
+
+            <div>
+
+                <label>Tournament Name</label>
+
+                <input
+                    type="text"
+                    id="tournamentName"
+                    placeholder="e.g. Battle Royale Cup"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Game</label>
+
+                <input
+                    type="text"
+                    id="game"
+                    placeholder="e.g. Valorant"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Mode</label>
+
+                <select id="mode">
+
+                    <option>
+                        Online
+                    </option>
+
+                    <option>
+                        In-Person
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div>
+
+                <label>Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Location</label>
+
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="Online / Venue"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Prize Pool</label>
+
+                <input
+                    type="number"
+                    id="prize"
+                    placeholder="Prize amount"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Maximum Players</label>
+
+                <input
+                    type="number"
+                    id="maxPlayers"
+                    placeholder="100"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Create Tournament
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <!-- TOURNAMENT LIST -->
+
+    <section class="admin-panel">
+
+        <h2>📋 Tournaments</h2>
+
+        <div
+            id="adminTournamentList"
+            class="admin-list"
+        ></div>
+
+    </section>
+
+
+    <!-- REGISTRATIONS -->
+
+    <section class="admin-panel">
+
+        <h2>👥 Tournament Registrations</h2>
+
+        <div
+            id="registrationList"
+            class="admin-list"
+        ></div>
+
+    </section>
+
+
+    <!-- MATCH RESULTS -->
+
+    <section class="admin-panel">
+
+        <h2>🎯 Update Match Results</h2>
+
+        <form
+            class="admin-form"
+            onsubmit="addResult(event)"
+        >
+
+            <div>
+
+                <label>Tournament ID</label>
+
+                <input
+                    type="number"
+                    id="resultTournament"
+                    placeholder="Enter tournament ID"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Player / Team</label>
+
+                <input
+                    type="text"
+                    id="resultPlayer"
+                    placeholder="Player or team"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>Score</label>
+
+                <input
+                    type="number"
+                    id="resultScore"
+                    placeholder="Score"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Update Result
+            </button>
+
+        </form>
+
+
+        <div
+            id="resultList"
+            class="admin-list"
+        ></div>
+
+    </section>
+
+
+    <!-- LEADERBOARD -->
+
+    <section class="admin-panel">
+
+        <h2>📊 Leaderboard</h2>
+
+        <div id="leaderboard"></div>
+
+    </section>
+
+
+    <!-- LIVE UPDATES -->
+
+    <section class="admin-panel">
+
+        <h2>🔴 Live Tournament Update</h2>
+
+        <form
+            class="admin-form"
+            onsubmit="addUpdate(event)"
+        >
+
+            <div>
+
+                <label>Update</label>
+
+                <textarea
+                    id="updateText"
+                    placeholder="Enter live tournament update..."
+                    required
+                ></textarea>
+
+            </div>
+
+            <button type="submit">
+                Publish Live Update
+            </button>
+
+        </form>
+
+
+        <div id="liveUpdates"></div>
+
+    </section>
+
+
+    <!-- PRIZE DISTRIBUTION -->
+
+    <section class="admin-panel">
+
+        <h2>💰 Prize Distribution</h2>
+
+        <form
+            class="admin-form"
+            onsubmit="addPrize(event)"
+        >
+
+            <div>
+
+                <label>Tournament</label>
+
+                <input
+                    type="text"
+                    id="prizeTournament"
+                    placeholder="Tournament name"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>🥇 First Prize</label>
+
+                <input
+                    type="number"
+                    id="firstPrize"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>🥈 Second Prize</label>
+
+                <input
+                    type="number"
+                    id="secondPrize"
+                    required
+                >
+
+            </div>
+
+
+            <div>
+
+                <label>🥉 Third Prize</label>
+
+                <input
+                    type="number"
+                    id="thirdPrize"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Save Prize Distribution
+            </button>
+
+        </form>
+
+
+        <div id="prizeList"></div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

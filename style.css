@@ -1,0 +1,822 @@
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f6f8;
+    color: #222;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================
+   HEADER
+========================================= */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 50px;
+
+    background: #151515;
+    color: white;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+nav a {
+    color: white;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #00c2ff;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+button {
+    background: #00a8cc;
+    color: white;
+
+    border: none;
+    border-radius: 6px;
+
+    padding: 12px 22px;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #0085a3;
+    transform: translateY(-1px);
+}
+
+button.secondary {
+    background: transparent;
+    border: 1px solid white;
+}
+
+button.secondary:hover {
+    background: white;
+    color: #222;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #111,
+            #263238
+        );
+
+    color: white;
+}
+
+.hero-content {
+    max-width: 800px;
+}
+
+.hero-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 19px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+/* =========================================
+   FEATURES
+========================================= */
+
+.features {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+
+    padding: 50px;
+}
+
+.feature-card {
+    background: white;
+
+    padding: 30px;
+
+    text-align: center;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.feature-card h2 {
+    margin-bottom: 12px;
+}
+
+.feature-card p {
+    color: #666;
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   HOW IT WORKS
+========================================= */
+
+.about-section {
+    padding: 50px;
+    text-align: center;
+}
+
+.about-section h2 {
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.steps {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.steps div {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+}
+
+.steps span {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 45px;
+    height: 45px;
+
+    margin: 0 auto 15px;
+
+    background: #00a8cc;
+
+    color: white;
+
+    border-radius: 50%;
+
+    font-weight: bold;
+}
+
+.steps h3 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   AUTH
+========================================= */
+
+.auth-container {
+    min-height: 85vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 30px;
+}
+
+.auth-box {
+    width: 420px;
+    max-width: 100%;
+
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px rgba(0, 0, 0, 0.12);
+}
+
+.auth-icon {
+    text-align: center;
+    font-size: 50px;
+}
+
+.auth-box h1 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.auth-box > p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.auth-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.auth-box label {
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 15px;
+}
+
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #00a8cc;
+}
+
+
+/* =========================================
+   DASHBOARD
+========================================= */
+
+.dashboard-container,
+.page-container,
+.admin-container {
+    padding: 40px 60px;
+}
+
+.welcome {
+    background: white;
+
+    padding: 35px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 20px;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    margin: 8px 0;
+    font-size: 35px;
+}
+
+.small-title {
+    color: #00a8cc;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.dashboard-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+.dashboard-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 15px;
+}
+
+.dashboard-card h2 {
+    margin-bottom: 10px;
+}
+
+.dashboard-card p {
+    color: #666;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   PANELS
+========================================= */
+
+.panel,
+.admin-panel {
+    background: white;
+
+    padding: 25px;
+
+    margin-top: 25px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.panel h2,
+.admin-panel h2 {
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   TEAM
+========================================= */
+
+.inline-form {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.inline-form input {
+    flex: 1;
+}
+
+.team-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.team-card {
+    background: #f3f5f7;
+
+    padding: 20px;
+
+    border-radius: 8px;
+}
+
+
+/* =========================================
+   PAGE HEADING
+========================================= */
+
+.page-heading {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.page-heading h1 {
+    font-size: 40px;
+    margin: 10px 0;
+}
+
+.page-heading p:last-child {
+    color: #666;
+}
+
+
+/* =========================================
+   TOURNAMENT GRID
+========================================= */
+
+.tournament-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+.tournament-card {
+    background: white;
+
+    padding: 25px;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.09);
+}
+
+.tournament-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+.tournament-card h2 {
+    margin-bottom: 15px;
+}
+
+.tournament-card p {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.status {
+    display: inline-block;
+
+    margin: 10px 0 15px;
+
+    padding: 6px 10px;
+
+    border-radius: 20px;
+
+    background: #dff6e5;
+
+    color: #16803c;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   TOURNAMENT DETAILS
+========================================= */
+
+.tournament-detail {
+    background: white;
+
+    padding: 40px;
+
+    border-radius: 12px;
+
+    display: flex;
+
+    gap: 30px;
+
+    align-items: center;
+
+    box-shadow:
+        0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.detail-icon {
+    font-size: 80px;
+}
+
+.tournament-detail h1 {
+    font-size: 38px;
+    margin: 10px 0;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+}
+
+
+/* =========================================
+   LEADERBOARD
+========================================= */
+
+.leaderboard-row {
+    display: grid;
+
+    grid-template-columns:
+        70px 1fr 150px;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 15px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* =========================================
+   LIVE UPDATES
+========================================= */
+
+.update-card {
+    background: #fff4f4;
+
+    border-left: 4px solid #e53935;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    border-radius: 5px;
+}
+
+.update-card small {
+    color: #777;
+}
+
+
+/* =========================================
+   SPECTATOR
+========================================= */
+
+.spectator-box {
+    margin-top: 20px;
+
+    padding: 30px;
+
+    background: #171717;
+
+    color: white;
+
+    border-radius: 10px;
+
+    text-align: center;
+
+    line-height: 2;
+}
+
+
+/* =========================================
+   ADMIN
+========================================= */
+
+.admin-heading {
+    margin-bottom: 30px;
+}
+
+.admin-heading h1 {
+    font-size: 38px;
+    margin: 8px 0;
+}
+
+.admin-form {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 20px;
+
+    margin-top: 20px;
+}
+
+.admin-form > div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.admin-form button {
+    grid-column: 1 / -1;
+}
+
+.admin-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 20px;
+}
+
+.admin-item {
+    background: #f3f5f7;
+
+    padding: 18px;
+
+    border-radius: 8px;
+}
+
+.admin-item h3 {
+    margin-bottom: 10px;
+}
+
+.result-card,
+.prize-card {
+    background: #f3f5f7;
+
+    padding: 15px;
+
+    margin-top: 10px;
+
+    border-radius: 7px;
+}
+
+
+/* =========================================
+   NO DATA
+========================================= */
+
+.no-games {
+    grid-column: 1 / -1;
+
+    background: white;
+
+    padding: 60px;
+
+    text-align: center;
+
+    border-radius: 10px;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    background: #151515;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 20px;
+
+    margin-top: 40px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .features,
+    .steps,
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tournament-grid,
+    .admin-list,
+    .team-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .features,
+    .steps,
+    .dashboard-grid,
+    .tournament-grid,
+    .admin-list,
+    .team-list,
+    .info-grid,
+    .admin-form {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        padding: 30px 20px;
+    }
+
+    .hero h1 {
+        font-size: 35px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+    }
+
+    .welcome {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dashboard-container,
+    .page-container,
+    .admin-container {
+        padding: 25px 20px;
+    }
+
+    .tournament-detail {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .inline-form {
+        flex-direction: column;
+    }
+
+    .leaderboard-row {
+        grid-template-columns:
+            50px 1fr 100px;
+    }
+}

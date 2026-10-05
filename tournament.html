@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tournament Details - GameDev Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🎮 GameDev Hub
+    </div>
+
+    <nav>
+
+        <a href="user.html">
+            Dashboard
+        </a>
+
+        <a href="tournaments.html">
+            Tournaments
+        </a>
+
+        <a href="#" onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="page-container">
+
+
+    <section class="tournament-detail">
+
+        <div class="detail-icon">
+            🏆
+        </div>
+
+        <div>
+
+            <p class="small-title">
+                TOURNAMENT DETAILS
+            </p>
+
+            <h1 id="selectedTournamentName">
+                Tournament
+            </h1>
+
+            <p id="selectedTournamentInfo">
+                Tournament information
+            </p>
+
+            <button onclick="registerTournament()">
+                Register for Tournament
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <section class="info-grid">
+
+
+        <div class="panel">
+
+            <h2>📅 Schedule</h2>
+
+            <div id="scheduleInfo">
+                Loading...
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>👥 Registrations</h2>
+
+            <p>
+                Registered Players:
+                <strong id="registrationCount">
+                    0
+                </strong>
+            </p>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>💰 Prize Pool</h2>
+
+            <div id="prizeList">
+                No prize information yet.
+            </div>
+
+        </div>
+
+
+        <div class="panel">
+
+            <h2>🔴 Live Updates</h2>
+
+            <div id="liveUpdates">
+                No updates yet.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="panel">
+
+        <h2>📊 Leaderboard</h2>
+
+        <div id="leaderboard">
+            No results available.
+        </div>
+
+    </section>
+
+
+    <section class="panel">
+
+        <h2>📺 Spectator Zone</h2>
+
+        <p>
+            Follow live tournament updates, scores and
+            leaderboard changes here.
+        </p>
+
+        <div class="spectator-box">
+
+            🔴 LIVE
+
+            <br>
+
+            Tournament updates are displayed in real time
+            through the platform.
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

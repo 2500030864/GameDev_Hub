@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>User Dashboard - GameDev Hub</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="logo">
+        🎮 GameDev Hub
+    </div>
+
+    <nav>
+
+        <a href="user.html">
+            Dashboard
+        </a>
+
+        <a href="tournaments.html">
+            Tournaments
+        </a>
+
+        <a href="#" onclick="logout()">
+            Logout
+        </a>
+
+    </nav>
+
+</header>
+
+
+<main class="dashboard-container">
+
+
+    <section class="welcome">
+
+        <div>
+
+            <p class="small-title">
+                PLAYER DASHBOARD
+            </p>
+
+            <h1>
+                Welcome,
+                <span id="userName">
+                    Player
+                </span>! 👋
+            </h1>
+
+            <p>
+                Manage your tournaments, teams and
+                gaming activities from here.
+            </p>
+
+        </div>
+
+        <button onclick="goToTournaments()">
+            Explore Tournaments
+        </button>
+
+    </section>
+
+
+    <section class="dashboard-grid">
+
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🏆
+            </div>
+
+            <h2>Tournaments</h2>
+
+            <p>
+                Browse available tournaments and
+                register for competitions.
+            </p>
+
+            <button onclick="goToTournaments()">
+                Browse
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                👥
+            </div>
+
+            <h2>My Team</h2>
+
+            <p>
+                Create and manage your gaming team.
+            </p>
+
+            <button onclick="scrollToTeam()">
+                Manage Team
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                📊
+            </div>
+
+            <h2>Leaderboard</h2>
+
+            <p>
+                Check player rankings and tournament
+                scores.
+            </p>
+
+            <button onclick="goToTournaments()">
+                View
+            </button>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <div class="card-icon">
+                🔴
+            </div>
+
+            <h2>Live Updates</h2>
+
+            <p>
+                Follow tournament announcements and
+                live match updates.
+            </p>
+
+            <button onclick="goToTournaments()">
+                View Updates
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- TEAM CREATION -->
+
+    <section class="panel" id="teamSection">
+
+        <h2>👥 Create Your Team</h2>
+
+        <p>
+            Create a team and become the team captain.
+        </p>
+
+
+        <form
+            class="inline-form"
+            onsubmit="createTeam(event)"
+        >
+
+            <input
+                type="text"
+                id="teamName"
+                placeholder="Enter team name"
+                required
+            >
+
+            <button type="submit">
+                Create Team
+            </button>
+
+        </form>
+
+
+        <div
+            id="teamList"
+            class="team-list"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
